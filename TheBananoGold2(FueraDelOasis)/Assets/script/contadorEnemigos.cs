@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +17,9 @@ public class contadorEnemigos : MonoBehaviour
     public TextMeshProUGUI txt_enmigosEliminaso;
     public TextMeshProUGUI txt_labelPuntosMeta;
     public int PuntosDeMeta = 6;
+    public GameObject celebracionNivel;
+    public GameObject personaje;
+    public AudioSource musicaDerrota;
     
 
     //public InputField input_nombre;
@@ -39,22 +43,47 @@ public class contadorEnemigos : MonoBehaviour
     }
     public void Guardar()
     {
+        GuardarGen();
+        panel.gameObject.SetActive(false);
+        Application.Quit();
+        
+        
+
+    }
+    public void GuardarGen()
+    {
         File.Delete("Puntaje.csv");
         StreamWriter escribir;
         escribir = File.AppendText("Puntaje.csv");
         string nom = input_nombre.text;
+        if (nom == null)
+        {
+            nom = "invitado";
+        }
         escribir.WriteLine(nom + "," + contadorEnEliminados.ToString());
         //escribir.Write(nom + " , " + contadorEnEliminados.ToString());
         escribir.Close();
-        panel.gameObject.SetActive(false);
-        Application.Quit();
-
     }
     void Start()
     {
         panel.gameObject.SetActive(false);
+        celebracionNivel.SetActive(false);
         txt_labelPuntosMeta.text = "/" + PuntosDeMeta.ToString();
+        
+        //if (SceneManager.GetActiveScene().buildIndex == 3)
+        //{
+        //    StartCoroutine(celebrarInicioNivel(2.0f));
+        //}
     }
+
+    //IEnumerator celebrarInicioNivel(float tiempo)
+    //{
+    //    celebracionNivel.SetActive(true);
+    //    personaje.SetActive(false);
+    //    yield return new WaitForSeconds(tiempo);
+    //    celebracionNivel.SetActive(false);
+    //    personaje.SetActive(true);
+    //}
 
     // Update is called once per frame
     void Update()
@@ -63,9 +92,13 @@ public class contadorEnemigos : MonoBehaviour
         puntuacion.text = contadorEnemigos.contadorEnEliminados.ToString();
         if (contVidas <= 0)
         {
+            //print("no tienes vidas");
+            musicaDerrota.Play();
             Time.timeScale = 0;
-            panel.gameObject.SetActive(true);
+            panel.SetActive(true);
+            print("se activo el panel");
             txt_enmigosEliminaso.text =contadorEnemigos.contadorEnEliminados.ToString();
+            //Guardar(true);
             return;
         }
         else if (contadorEnEliminados >= PuntosDeMeta)
@@ -74,8 +107,20 @@ public class contadorEnemigos : MonoBehaviour
 
             //celebracion sigEsc = new celebracion();
             //sigEsc.InciarInterrupcion();
-            Guardar();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int proximaEscena = SceneManager.GetActiveScene().buildIndex + 1;
+            if (proximaEscena < SceneManager.sceneCountInBuildSettings)
+            {
+                GuardarGen();
+                SceneManager.LoadScene(proximaEscena);
+            }
+            else
+            {
+                File.Delete("Puntaje.csv");
+                celebracionNivel.SetActive(true);
+                personaje.SetActive(false);
+                
+            }
+            
 
         }
             print(contadorEnEliminados);

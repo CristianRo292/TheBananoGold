@@ -7,12 +7,15 @@ public class UI : MonoBehaviour
     public AudioSource voz_historia;
     public GameObject btn_pley;
     public GameObject btn_pausar;
-
+    public GameObject btn_sonido;
+    public GameObject btn_sinSonido;
+    private bool estVol = false;
     // Start is called before the first frame update
     void Start()
     {
         voz_historia.Play();
         voz_historia.Pause();
+        
         btn_pausar.SetActive(false);
     }
 
@@ -33,5 +36,18 @@ public class UI : MonoBehaviour
         voz_historia.Pause();
         btn_pausar.SetActive(false);
         btn_pley.SetActive(true);
+    }
+    public void Silenciar()
+    {
+        
+        voz_historia.mute = true;
+        btn_sonido.SetActive(false);
+        btn_sinSonido.SetActive(true);
+    }
+    public void activarVolumen()
+    {
+        voz_historia.mute = false;
+        btn_sonido.SetActive(true);
+        btn_sinSonido.SetActive(false);
     }
 }

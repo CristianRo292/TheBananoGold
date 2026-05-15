@@ -87,6 +87,7 @@ public class bala : MonoBehaviour
         if (collision.CompareTag("poder"))
         {
             ActivarPoder(tiempoPoder);
+            Destroy(collision.gameObject);
         }
         else if (collision.CompareTag("enemigo") && modoNave != 3)
         {
