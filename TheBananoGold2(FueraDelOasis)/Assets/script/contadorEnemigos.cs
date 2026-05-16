@@ -20,13 +20,15 @@ public class contadorEnemigos : MonoBehaviour
     public GameObject celebracionNivel;
     public GameObject personaje;
     public AudioSource musicaDerrota;
-    
+    public static string nom = "invitado";
+
 
     //public InputField input_nombre;
     public TMP_InputField input_nombre;
     // Start is called before the first frame update
     private void Awake()
     {
+        
         StreamReader leer;
         if (File.Exists("Puntaje.csv"))
         {
@@ -43,7 +45,11 @@ public class contadorEnemigos : MonoBehaviour
     }
     public void Guardar()
     {
-        GuardarGen();
+        //GuardarGen();
+        string nomT = input_nombre.text;
+        if (nomT.Length == 0) { nomT = "invitado"; } 
+        ControladorDeArchivos.GuardarArchivoMultiple(nombre:nomT , puntos: contadorEnEliminados);
+        File.Delete("Puntaje.csv");
         panel.gameObject.SetActive(false);
         Application.Quit();
         
@@ -55,7 +61,7 @@ public class contadorEnemigos : MonoBehaviour
         File.Delete("Puntaje.csv");
         StreamWriter escribir;
         escribir = File.AppendText("Puntaje.csv");
-        string nom = input_nombre.text;
+        nom = input_nombre.text;
         if (nom == null)
         {
             nom = "invitado";
@@ -116,6 +122,7 @@ public class contadorEnemigos : MonoBehaviour
             else
             {
                 File.Delete("Puntaje.csv");
+                ControladorDeArchivos.EliminarDeSeccionMultiple(nombre: nom);
                 celebracionNivel.SetActive(true);
                 personaje.SetActive(false);
                 
@@ -136,11 +143,19 @@ public class contadorEnemigos : MonoBehaviour
     {
         contVidas--;
     }
+    public void reiniciar()
+    {
+        GuardarGen();
+        contVidas = 3;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        panel.SetActive(false);
+    }
     //public void celebracion()
     //{
     //    Vector3 posicion = new Vector3(-14.21646f, 14.6026f, -1);
     //    GameObject clon = Instantiate(celebracionFu, posicion, Quaternion.identity);
     //    Destroy(clon, 8.0f);
     //}
-    
+
 }
