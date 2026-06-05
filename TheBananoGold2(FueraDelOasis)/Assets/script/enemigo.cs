@@ -17,12 +17,19 @@ public class enemigo : MonoBehaviour
     {
         posicion = transform.position;
         objetivo = GameObject.FindGameObjectWithTag("Player").transform;
+        //print(objetivo);
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (objetivo == null)
+        {
+            Destroy(gameObject);
+        }
+        //print ("contenido del objetivo: " + objetivo);
         if (seguir_Personaje)
         {
             seguirPersonaje();

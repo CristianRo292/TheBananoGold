@@ -9,17 +9,6 @@ using UnityEngine;
 public class ControladorDeArchivos : MonoBehaviour
 {
     private  const string nombreArchivo = "PuntajeGlobal.csv";
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //METODO QUEGUARDA EL PUNTAJE DE JUGADOR EN UNA LISTA DE JUGADORES
     public static void GuardarArchivoMultiple(string archivoN = nombreArchivo, string nombre = "invitado", int puntos = 0)
     {

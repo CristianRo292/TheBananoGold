@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 30
-  velocidadRotacion: 20
+  velocidadRotacion: 10
   margen: 0.5
 --- !u!61 &83845365
 BoxCollider2D:

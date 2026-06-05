@@ -30,7 +30,6 @@ public class UI : MonoBehaviour
         voz_historia.UnPause();
         btn_pausar.SetActive(true);
         btn_pley.SetActive(false);
-
     }
     public void Detener_voz()
     {
@@ -51,6 +50,4 @@ public class UI : MonoBehaviour
         btn_sonido.SetActive(true);
         btn_sinSonido.SetActive(false);
     }
-    
-    
 }
