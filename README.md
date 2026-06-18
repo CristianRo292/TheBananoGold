@@ -1,5 +1,4 @@
-<img width="511" height="291" alt="portada" src="https://github.com/user-attachments/assets/63428069-7303-431e-9eb3-db139cf9a46a" style="display: block; margin-left: auto; margin-right: auto;" />
-
+<img width="511" height="291" alt="portada" src="https://github.com/user-attachments/assets/63428069-7303-431e-9eb3-db139cf9a46a" style="position: absolute; left: 50%; transform: translateX(-50%);" />
 # THE BANANO GOLD 2: FUERA DEL OASIS
 
 Executable del juego disponible en: https://drive.google.com/file/d/1jOgqcA-91sTpoCEdbu68AwYt_bERsY0y/view?usp=sharing 
