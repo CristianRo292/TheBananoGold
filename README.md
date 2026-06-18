@@ -1,4 +1,3 @@
-![portada del juego](https://drive.google.com/file/d/1-0EvEULYw4VzFiNJMHj6r840BDH_B7Ui/view?usp=drive_link)
 
 # THE BANANO GOLD 2: FUERA DEL OASIS
 
