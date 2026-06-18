@@ -1,4 +1,4 @@
-<img width="511" height="291" alt="portada" src="https://github.com/user-attachments/assets/63428069-7303-431e-9eb3-db139cf9a46a" />
+<img width="511" height="291" alt="portada" src="https://github.com/user-attachments/assets/63428069-7303-431e-9eb3-db139cf9a46a" style="display: block; margin-left: auto; margin-right: auto;" />
 
 # THE BANANO GOLD 2: FUERA DEL OASIS
 
