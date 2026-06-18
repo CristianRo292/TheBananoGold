@@ -1,4 +1,4 @@
-<img width="3840" height="2160" alt="image" src="[https://drive.google.com/file/d/1-0EvEULYw4VzFiNJMHj6r840BDH_B7Ui/view?usp=drive_link](https://drive.google.com/file/d/12-fWCK6ElVR4e39wX_bau5cfaCF6Jpuk/view?usp=drive_link)" />
+![Texto Alternativo](https://drive.google.com/file/d/12-fWCK6ElVR4e39wX_bau5cfaCF6Jpuk/view?usp=drive_link)
 # THE BANANO GOLD 2: FUERA DEL OASIS
 
 Executable del juego disponible en: https://drive.google.com/file/d/1jOgqcA-91sTpoCEdbu68AwYt_bERsY0y/view?usp=sharing 
