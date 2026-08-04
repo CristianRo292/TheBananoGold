@@ -1,0 +1,54 @@
+//using System.Collections;
+//using System.Collections.Generic;
+using UnityEngine;
+//using UnityEngine.SceneManagement;
+
+public class UI : MonoBehaviour
+{
+    public AudioSource voz_historia;
+    public GameObject btn_pley;
+    public GameObject btn_pausar;
+    public GameObject btn_sonido;
+    public GameObject btn_sinSonido;
+    //private bool estVol = false;
+    // Start is called before the first frame update
+    void Start()
+    {
+        voz_historia.Play();
+        voz_historia.Pause();
+        
+        btn_pausar.SetActive(false);
+        btn_sinSonido.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    public void Reproducir_voz()
+    {
+        voz_historia.UnPause();
+        btn_pausar.SetActive(true);
+        btn_pley.SetActive(false);
+    }
+    public void Detener_voz()
+    {
+        voz_historia.Pause();
+        btn_pausar.SetActive(false);
+        btn_pley.SetActive(true);
+    }
+    public void Silenciar()
+    {
+        
+        voz_historia.mute = true;
+        btn_sonido.SetActive(false);
+        btn_sinSonido.SetActive(true);
+    }
+    public void activarVolumen()
+    {
+        voz_historia.mute = false;
+        btn_sonido.SetActive(true);
+        btn_sinSonido.SetActive(false);
+    }
+}
