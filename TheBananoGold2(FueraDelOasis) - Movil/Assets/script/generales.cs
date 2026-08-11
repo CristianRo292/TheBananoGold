@@ -35,8 +35,8 @@ public class generales : MonoBehaviour
     public void siguienteEscena(int noEscena) => SceneManager.LoadScene(noEscena);
     public void volverInicio()
     {
-        
-        if (File.Exists("Puntaje.csv")) { File.Delete("Puntaje.csv"); }
+        string archPuntaje = Path.Combine(Application.persistentDataPath, "Puntaje.csv");
+        if (File.Exists(archPuntaje)) { File.Delete(archPuntaje); }
         SceneManager.LoadScene(SiguienteEscena);
     }
     

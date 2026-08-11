@@ -1,14 +1,15 @@
 //using Microsoft.Unity.VisualStudio.Editor;
 using System;
+using System.IO;
 //using System.Collections;
 //using System.Collections.Generic;
 //using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Color = UnityEngine.Color;
 //using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
-using Color = UnityEngine.Color;
 
 public class ControlTabla : MonoBehaviour
 {
@@ -126,8 +127,11 @@ public class ControlTabla : MonoBehaviour
     public void comenzarDesdeRegistro()
     {
         string nom = Nombres[celdaSeleccionada].text;
-        contadorEnemigos.contadorEnEliminados = ControladorDeArchivos.EncontrarDato(nom);
-        contadorEnemigos.nombreActual = Nombres[celdaSeleccionada].text;
+
+        
+        string archPuntaje = Path.Combine(Application.persistentDataPath, "Puntaje.csv");
+        if (File.Exists(archPuntaje)) { File.Delete(archPuntaje); }
+        ControladorDeArchivos.GuardarGen(puntos: ControladorDeArchivos.EncontrarDato(nom), nom: nom, archivo: archPuntaje);
 
         //panelReanudar.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

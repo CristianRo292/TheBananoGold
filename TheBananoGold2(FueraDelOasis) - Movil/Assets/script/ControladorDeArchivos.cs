@@ -166,6 +166,7 @@ public class ControladorDeArchivos : MonoBehaviour
                 if (datos != null)
                 {
                     string[] d = datos.Split(",");
+                    
                     if (!nombre.Equals(d[0]))
                     {
                         Console.WriteLine("Copiando datos");
@@ -180,6 +181,11 @@ public class ControladorDeArchivos : MonoBehaviour
             while (datos != null); // se repite hasta que el archivo regrese un valor null
             leerArchivo.Close();
             File.Delete(archivoN);
+            if (!File.Exists(archAuxil)) 
+            {
+                return;
+
+            }
             File.Copy(archAuxil, archivoN, true); // el true permite sobreescribir el archivo si llegara a existir
             if (File.Exists(archAuxil))
             {

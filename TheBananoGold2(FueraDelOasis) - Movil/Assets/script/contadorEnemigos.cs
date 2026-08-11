@@ -27,9 +27,9 @@ public class contadorEnemigos : MonoBehaviour
     public TextMeshProUGUI puntosAlPausar;
     
     // direccion de donde se encuetra el archivo de los puntos 
-    private string archPuntaje = null;
+    private string archPuntaje = string.Empty;
 
-    public static string nombreActual = null;
+    public static string nombreActual = string.Empty;
 
 
     //public InputField input_nombre;
@@ -39,13 +39,16 @@ public class contadorEnemigos : MonoBehaviour
     {
         try
         {
+            print("CONTADOR DE ENEMIMOS EN AWAKE" + contadorEnEliminados.ToString());
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             archPuntaje = Path.Combine(Application.persistentDataPath, "Puntaje.csv");
             StreamReader leer;
             if (File.Exists(archPuntaje))
             {
+                print("DENTRO DE LA CONDICION AWAKE");
                 leer = File.OpenText(archPuntaje);
                 string Datos = leer.ReadLine();
+                print(Datos);
                 string[] p = Datos.Split(",");
                 contadorEnEliminados = int.Parse(p[1]);
                 puntoslegada = contadorEnEliminados;
@@ -54,6 +57,7 @@ public class contadorEnemigos : MonoBehaviour
 
 
             }
+            print("CONTADOR DE ENEMIMOS EN AWAKE salida" + contadorEnEliminados.ToString());
         }
         catch (Exception e)
         {
@@ -69,9 +73,12 @@ public class contadorEnemigos : MonoBehaviour
         try
         {
             //GuardarGen();
-            string nomT = null;
+            string nomT = string.Empty; // forma optima de inicializar una bariable string
             if (mode == 1) { nomT = input_nombre.text; }
             else if (mode == 0 ) { nomT = nombreActual; }
+
+            print("Contenido de nomt: " + nomT);
+            //print("Extencion de nomt: " + nomT.Length);
 
             if (nomT.Length == 0) 
             { 
@@ -100,17 +107,20 @@ public class contadorEnemigos : MonoBehaviour
     {
         try
         {
-            File.Delete(archPuntaje);
+            print("CONTADOR DE ENEMIMOS EN GUARDAR GEN " + contadorEnEliminados.ToString());
+            if (File.Exists(archPuntaje)) { File.Delete(archPuntaje); }
+            
             StreamWriter escribir;
             escribir = File.AppendText(archPuntaje);
             nom = nombreActual;
-            if (nom == null)
+            if (nom == null || nom.Length == 0)
             {
                 nom = "invitado";
             }
             escribir.WriteLine(nom + "," + contadorEnEliminados.ToString());
             //escribir.Write(nom + " , " + contadorEnEliminados.ToString());
             escribir.Close();
+            print("CONTADOR DE ENEMIMOS EN GUARDAR GEN SALIDA" + contadorEnEliminados.ToString());
         }
         catch (Exception e)
         {
@@ -131,6 +141,7 @@ public class contadorEnemigos : MonoBehaviour
             //celebracionNivel.SetActive(false);
             txt_labelPuntosMeta.text = "/" + PuntosDeMeta.ToString();
             //controles.gameObject.SetActive(true);
+            print("CONTADOR DE ENEMIMOS EN SATAR" + contadorEnEliminados.ToString());
         }
         catch (Exception e)
         {
@@ -170,7 +181,7 @@ public class contadorEnemigos : MonoBehaviour
                 panel.SetActive(true);
                 //print("se activo el panel");
                 txt_enmigosEliminaso.text = contadorEnemigos.contadorEnEliminados.ToString();
-                input_nombre.text = nombreActual;
+                ((TextMeshProUGUI)input_nombre.placeholder).text = nombreActual; // se coloca el nombre actual como texto para el placeholder del campo
                 //Guardar(true);
                 return;
             }
@@ -225,6 +236,7 @@ public class contadorEnemigos : MonoBehaviour
     {
         try
         {
+            print("CONTADOR DE ENEMIMOS EN REINICIAR" + contadorEnEliminados.ToString());
             contadorEnEliminados = puntoslegada;
             GuardarGen();
             contVidas = 3;
@@ -232,6 +244,7 @@ public class contadorEnemigos : MonoBehaviour
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             panel.SetActive(false);
+            print("CONTADOR DE ENEMIMOS EN REINICIAR SALIDA" + contadorEnEliminados.ToString());
         }
         catch (Exception e)
         {

@@ -11,7 +11,7 @@ public class ControlNave : MonoBehaviour
     public int velocidad = 10, velocidadRotacion = 10;
     private Camera camara;
     public float margen = 0.5f;
-    private float valorDeLosEjes = 0.65f; // Usamos 1.0f para máxima potencia
+    public float valorDeLosEjes = 0.65f; // Usamos 1.0f para máxima potencia
 
     void Start()
     {

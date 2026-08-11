@@ -156,9 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9e2d661b0508f40874f0aa8bb1d5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 50
-  velocidadRotacion: 15
+  velocidad: 60
+  velocidadRotacion: 10
   margen: 1
+  valorDeLosEjes: 0.55
 --- !u!61 &83845365
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -806,6 +807,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2403711543739818688, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403711543739818688, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403711543739818688, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2403711543739818688, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709451667808177546, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709451667808177546, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709451667808177546, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2709451667808177546, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2762088648320153682, guid: d38a61b5779715144958c33425978977, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -886,12 +919,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2929503009102653104, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2196.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929503009102653104, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174836068232773662, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174836068232773662, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174836068232773662, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174836068232773662, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282814048002163246, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2196.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282814048002163246, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.8985
+      objectReference: {fileID: 0}
     - target: {fileID: 3883701394564276513, guid: d38a61b5779715144958c33425978977, type: 3}
       propertyPath: m_Name
       value: UI_panel
       objectReference: {fileID: 0}
     - target: {fileID: 3964471578812636991, guid: d38a61b5779715144958c33425978977, type: 3}
       propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322908797239700176, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5319169765532939466, guid: d38a61b5779715144958c33425978977, type: 3}
@@ -958,6 +1027,38 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SoltarEjeX
       objectReference: {fileID: 0}
+    - target: {fileID: 7761815833127235294, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761815833127235294, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761815833127235294, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761815833127235294, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234803134904887244, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234803134904887244, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234803134904887244, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234803134904887244, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8561025519144160172, guid: d38a61b5779715144958c33425978977, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -973,6 +1074,22 @@ PrefabInstance:
     - target: {fileID: 8561025519144160172, guid: d38a61b5779715144958c33425978977, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SoltarEjeX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085958409941682334, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085958409941682334, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085958409941682334, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085958409941682334, guid: d38a61b5779715144958c33425978977, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1148,8 +1265,8 @@ Transform:
   m_GameObject: {fileID: 1279726615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -0.9, z: 0}
-  m_LocalScale: {x: 3.5777, y: 3.6642, z: 1}
+  m_LocalPosition: {x: -0.3, y: -1.2, z: 0}
+  m_LocalScale: {x: 4.0292053, y: 4.158134, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
