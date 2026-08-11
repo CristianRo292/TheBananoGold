@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - The Banano Gold 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0a1929;
+            --primary-navy: #0f2744;
+            --primary-blue: #1e3a8a;
+            --accent-blue: #2563eb;
+            --light-blue: #3b82f6;
+            --soft-blue: #60a5fa;
+            --pale-blue: #dbeafe;
+            --gold: #d4af7a;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --border: #cbd5e1;
+            --white: #ffffff;
+            --bg-surface: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a1929 0%, #0f2744 50%, #1e3a8a 100%);
+            min-height: 100vh;
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 40px 20px;
+            background-attachment: fixed;
+        }
+
+        /* Decorative pattern overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(96, 165, 250, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(147, 197, 253, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--white) 0%, var(--pale-blue) 100%);
+            border-radius: 20px;
+            padding: 50px 60px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--soft-blue), var(--gold));
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            color: white;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .header-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        .date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(203, 213, 225, 0.5);
+            border-radius: 100px;
+            font-weight: 500;
+        }
+
+        .date svg {
+            width: 14px;
+            height: 14px;
+            color: var(--accent-blue);
+        }
+
+        /* Main content layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* Sidebar navigation */
+        .sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: sticky;
+            top: 20px;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav li {
+            margin-bottom: 4px;
+        }
+
+        .sidebar nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .sidebar nav a:hover {
+            background: linear-gradient(135deg, var(--pale-blue), var(--white));
+            color: var(--primary-blue);
+            transform: translateX(4px);
+        }
+
+        .sidebar nav a .nav-number {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            min-width: 22px;
+        }
+
+        /* Main content */
+        .main-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            margin-bottom: 40px;
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--bg-surface) 0%, var(--pale-blue) 100%);
+            border-radius: 14px;
+            border-left: 4px solid var(--accent-blue);
+            line-height: 1.8;
+        }
+
+        .intro strong {
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 45px;
+            padding-bottom: 45px;
+            border-bottom: 1px solid var(--border);
+            scroll-margin-top: 20px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+            flex-shrink: 0;
+        }
+
+        .section-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            color: var(--primary-navy);
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-medium);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        p strong {
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+
+        p em {
+            color: var(--accent-blue);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        ul li {
+            padding: 12px 15px 12px 40px;
+            margin-bottom: 10px;
+            background: var(--bg-surface);
+            border-radius: 10px;
+            color: var(--text-medium);
+            font-size: 0.98rem;
+            position: relative;
+            transition: all 0.25s ease;
+            border-left: 3px solid transparent;
+        }
+
+        ul li:hover {
+            background: var(--pale-blue);
+            border-left-color: var(--accent-blue);
+            transform: translateX(4px);
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--light-blue));
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 16px;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(15, 39, 68, 0.4);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--soft-blue);
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .contact-value a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.25s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--soft-blue);
+            border-bottom-color: var(--soft-blue);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            padding: 20px;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--soft-blue), transparent);
+            margin: 0 auto 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .header, .main-content {
+                padding: 35px 30px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .header, .main-content {
+                padding: 28px 22px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .sidebar, .main-content {
+            animation: fadeInUp 0.6s ease-out 0.2s backwards;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                Documento Legal
+            </div>
+            <h1>Términos y Condiciones</h1>
+            <p class="header-subtitle">Acuerdo legal que rige el uso del videojuego <em>The Banano Gold 2: Fuera del Oasis</em> desarrollado por CRISoftware.</p>
+            <div class="date">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Última actualización: 11 de agosto de 2026
+            </div>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-title">Índice</div>
+            <nav>
+                <ul>
+                    <li><a href="#intro"><span class="nav-number">I.</span> Introducción</a></li>
+                    <li><a href="#uso"><span class="nav-number">II.</span> Uso de la Aplicación</a></li>
+                    <li><a href="#propiedad"><span class="nav-number">III.</span> Propiedad Intelectual</a></li>
+                    <li><a href="#modificaciones"><span class="nav-number">IV.</span> Modificaciones</a></li>
+                    <li><a href="#responsabilidad"><span class="nav-number">V.</span> Responsabilidad</a></li>
+                    <li><a href="#cambios"><span class="nav-number">VI.</span> Cambios a los Términos</a></li>
+                    <li><a href="#contacto"><span class="nav-number">VII.</span> Contacto</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="intro" id="intro">
+                Bienvenido a <strong>The Banano Gold 2: Fuera del oasis</strong>. Al descargar, instalar o utilizar este videojuego, aceptas quedar vinculado por los presentes Términos y Condiciones. Si no estás de acuerdo con ellos, te solicitamos no instalar ni utilizar la aplicación.
+            </div>
+
+            <section class="section" id="uso">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h2>1. Uso de la Aplicación</h2>
+                </div>
+                <p><strong>CRISoftware by CRIS</strong> te otorga una licencia personal, limitada, no exclusiva, no transferible y revocable para descargar y jugar a <em>The Banano Gold 2</em> para tu entretenimiento personal no comercial.</p>
+            </section>
+
+            <section class="section" id="propiedad">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h2>2. Propiedad Intelectual</h2>
+                </div>
+                <p>Todos los derechos de propiedad intelectual sobre el videojuego, incluyendo código fuente, diseño de niveles, arte, personajes, marcas y logotipos de <strong>CRISoftware by CRIS</strong>, son propiedad exclusiva del desarrollador. Queda estrictamente prohibido:</p>
+                <ul>
+                    <li>Descompilar, realizar ingeniería inversa o intentar extraer el código fuente del juego.</li>
+                    <li>Modificar, adaptar o crear obras derivadas basadas en el juego sin autorización previa.</li>
+                    <li>Redistribuir o comercializar copias del juego fuera de los canales oficiales.</li>
+                </ul>
+            </section>
+
+            <section class="section" id="modificaciones">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 3 21 3 21 8"></polyline>
+                            <line x1="4" y1="20" x2="21" y2="3"></line>
+                            <polyline points="21 16 21 21 16 21"></polyline>
+                            <line x1="15" y1="15" x2="21" y2="21"></line>
+                            <line x1="4" y1="4" x2="9" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h2>3. Modificaciones y Actualizaciones</h2>
+                </div>
+                <p>Nos reservamos el derecho de modificar, actualizar o discontinuar temporal o permanentemente el juego (o cualquier parte de él) con o sin previo aviso. No nos hacemos responsables ante ti ni ante terceros por cualquier modificación, suspensión o interrupción del servicio.</p>
+            </section>
+
+            <section class="section" id="responsabilidad">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h2>4. Limitación de Responsabilidad</h2>
+                </div>
+                <p>El juego se proporciona "tal cual" y "según disponibilidad", sin garantías de ningún tipo, explícitas o implícitas. <strong>CRISoftware by CRIS</strong> no garantiza que el juego esté libre de errores o interrupciones, ni se hace responsable de daños directos o indirectos derivados del uso del juego en tu dispositivo.</p>
+            </section>
+
+            <section class="section" id="cambios">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
+                    </div>
+                    <h2>5. Cambios a los Términos</h2>
+                </div>
+                <p>Podemos actualizar estos Términos y Condiciones periódicamente. Te recomendamos revisar esta página regularmente para estar al tanto de cualquier cambio. El uso continuado del juego tras la publicación de cambios constituirá tu aceptación de los mismos.</p>
+            </section>
+
+            <section class="section" id="contacto">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <h2>6. Contacto</h2>
+                </div>
+                <p>Si tienes alguna duda o consulta sobre estos Términos y Condiciones, puedes ponerte en contacto con nuestro equipo:</p>
+
+                <div class="contact-card">
+                    <div class="contact-card-content">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Desarrollador</div>
+                                <div class="contact-value">CRISoftware by CRIS</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Correo Electrónico</div>
+                                <div class="contact-value">
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contacto.crisoftware@gmail.com">contacto.crisoftware@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-divider"></div>
+        <p>© 2026 CRISoftware by CRIS. Todos los derechos reservados.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
